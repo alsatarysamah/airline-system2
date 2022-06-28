@@ -52,3 +52,45 @@ Flight {
     flightID: 'ds7g86sa8v87dsv60v876d',
 }
 
+# Featutess to be added
+
+Creating message queue to store the events when the pilot is offline and send them back when he became online.
+
+system.js file
+
+Add new object called 'queue' that have One property (flights) to contain all 'new-flight' events.
+
+queue look like
+
+    queue ={
+         flights:{
+
+             '53gdf34fdg3334g':{
+
+                 event:"new-flight",
+
+                     details:{
+
+                         time: 6-27-2022,
+
+                         id:            332u443673r32yuf463w444,
+
+                         pilot : Joun Cina Snow,
+
+                         destination : Amman,
+
+                     }
+             },
+            
+         }
+     }
+
+
+**pilot.js** file
+
+trigger 'get-all' event, to get all messages back from the message queue.
+
+After triggering the 'flight-arrived' event make sure to delete the flight from the message queue.(Strech Goal)
+
+Listen to 'fligt' event to log this message to the console 'Pilot:Sorry i didn't catch this flight ID 332u443673r32yuf463
+
